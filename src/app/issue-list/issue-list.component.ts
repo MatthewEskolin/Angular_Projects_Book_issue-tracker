@@ -12,10 +12,19 @@ export class IssueListComponent implements OnInit {
 
   issues: Issue[] = [];
 
+  showReportIssue = false;
+
+
+
   private getIssues() {
     this.issues = this.issueService.getPendingIssues();
   }
   ngOnInit(): void {
+    this.getIssues();
+  }
+
+  onCloseReport(){
+    this.showReportIssue = false;
     this.getIssues();
   }
 }
